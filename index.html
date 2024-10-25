@@ -7,112 +7,30 @@
     <meta name="keywords" content="logistika, transport, laod, kaubanduslik logistika">
     <meta name="author" content="Andreas Kirs">
     <title>Logistika ja Transport</title>
-    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/?size=100&id=vVexwBPpXlhZ&format=png&color=000000">
+    <link rel="icon" type="image/x-icon"
+          href="https://img.icons8.com/?size=100&id=vVexwBPpXlhZ&format=png&color=000000">
     <style>
-        /* Üldine stiil */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        /* Päis */
-        header {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 1em;
-        }
-
-        /* Menüü */
-        nav {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 1em;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 1em;
-        }
-        nav a:hover {
-            background-color: #555;
-        }
-
-
-        /* Teenused */
-        section {
-            padding: 2em;
-        }
-
-        article {
-            margin: 1em 0;
-        }
-
-        /* Tabel */
         table {
-            width: 100%;
+            border: 3px solid black;
+            width: 70%;
             border-collapse: collapse;
         }
+        td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+        /* Lisa stiilid, et animatsiooni ja interaktsiooni muuta */
+        .hover-effect {
+            transition: fill 0.3s ease;
+            cursor: pointer; /* Muuda kursor klikkimiseks sobivaks */
+        }
+        .hover-effect:hover {
+            fill: #ffcc00; /* Muuda värvi hiire üle viimise ajal */
+        }
+         #sisend{
+            border: 1px solid black;
+            padding: 10px;
 
-        th, td {
-            border: 1px solid #333;
-            padding: 0.5em;
-        }
-
-        th {
-            background-color: #333;
-            color: white;
-        }
-
-        /* Kontaktivorm */
-        #kontakt h2 {
-            text-align: center;
-        }
-        form {
-            display: flex;
-            flex-direction: column;
-            width: 50%;
-            margin: 0 auto;
-        }
-
-        label {
-            margin-bottom: 0.5em;
-        }
-
-        input, textarea {
-            padding: 0.5em;
-            margin-bottom: 1em;
-        }
-
-        button {
-            padding: 0.5em;
-            background-color: #333;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #555;
-        }
-
-        /* Jalus */
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 1em;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
-        #video {
-            padding: 2em;
-            text-align: center;
-        }
     </style>
 </head>
 <body>
@@ -120,26 +38,62 @@
 <!-- Päis -->
 <header>
     <h1>Logistika ja Transpordi Teenused</h1>
-    <p>Meie logistikateenused aitavad teie ettevõttel kasvada bla-bla-bla</p>
-</header>
+    <h4>Meie logistikateenused aitavad teie ettevõttel kasvada </h4>
 
+</header>
+<dialog id="myDialog" open>
+    <p>Me ei salvesta ega edasta kasutaja informatsiooni kolmandatele osapooltele</p>
+    <button id="closeButton">Jätka külastamist</button>
+</dialog>
 <!-- Menüü -->
 <nav>
     <a href="#teenused">Teenused</a>
     <a href="#hinnakiri">Hinnakiri</a>
     <a href="#kontakt">Kontakt</a>
 </nav>
+<main>
 <section id="video">
     <h2>Teemakohane video</h2>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/alwSlqcrnlo?si=E-4MyjZpukfksN8t" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/alwSlqcrnlo?si=E-4MyjZpukfksN8t"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <br>
+    <video width="320" height="240" controls>
+        <source src="media/sample-5s.mp4" type="video/mp4">
+        <source src="movie.ogg" type="video/ogg">
+        Your browser does not support the video tag.
+    </video>
+    <br>
+    <p><b>Tööde juhataja:</b></p>
+    <blockquote>Kui töö tehtud, siis aega puhata.</blockquote>
 
+    <audio controls>
+        <source src="horse.ogg" type="audio/ogg">
+        <source src="media/small-dog-barking-84707.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
 </section>
+<section class="pildid">
+    <h2>Pildid</h2>
+    <figure>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Warehouse_in_New_Jersey_where_trucks_deliver_granite_slabs.jpg" alt="Laod" width="400" height="300"><br>
+        <cite>By <a href="//commons.wikimedia.org/w/index.php?title=User:Tomwsulcer&amp;action=edit&amp;redlink=1" class="new" title="User:Tomwsulcer (page does not exist)">Tomwsulcer</a> - <span class="int-own-work" lang="en">Own work</span>, <a href="http://creativecommons.org/publicdomain/zero/1.0/deed.en" title="Creative Commons Zero, Public Domain Dedication">CC0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=23987210">Link</a></cite>
+        <figcaption>Meie kaasaegsed laod tagavad teie kaupade ohutu ja turvalise hoidmise.</figcaption>
+    </figure>
+    <figure>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Walmart%E2%80%99s_Hybrid_Assist_Truck.jpg/1280px-Walmart%E2%80%99s_Hybrid_Assist_Truck.jpg" alt="Lorry" width="400" height="300"><br>
+        <cite>By Walmart - <a rel="nofollow" class="external free" href="https://www.flickr.com/photos/walmartcorporate/5261061467/">https://www.flickr.com/photos/walmartcorporate/5261061467/</a>, <a href="https://creativecommons.org/licenses/by/2.0" title="Creative Commons Attribution 2.0">CC BY 2.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=109609118">Link</a></cite>
+        <figcaption>Näidisvedu</figcaption>
+    </figure>
+</section>
+
 <!-- Teenused -->
 <section id="teenused">
     <h2>Meie Teenused</h2>
     <article>
         <h3>Transport</h3>
-        <p>Pakkume kohalikke ja rahvusvahelisi transporditeenuseid, mis vastavad teie vajadustele.</p>
+        <p><mark>Pakume kohalikke ja rahvusvahelisi transporditeenuseid</mark>, mis vastavad teie vajadustele.</p>
     </article>
     <article>
         <h3>Ladustamine</h3>
@@ -153,8 +107,9 @@
 
 <!-- Tabel hinnakirja jaoks -->
 <section id="hinnakiri">
-    <h2>Hinnakiri</h2>
+
     <table>
+        <caption><h3>Hinnakiri</h3></caption>
         <thead>
         <tr>
             <th>Teenuse nimi</th>
@@ -174,7 +129,7 @@
             <td>5-10 päeva</td>
         </tr>
         <tr>
-            <td>Ladustamine</td>
+            <td>Lühiajaline laoteenus<details><summary>Detailid</summary>Lühiajaline laoteenus on üks ööpäev kuni kolm nädalat</details></td>
             <td>10</td>
             <td>päevas</td>
         </tr>
@@ -182,6 +137,26 @@
             <td>Pakendamine</td>
             <td>15</td>
             <td>kauba kohta</td>
+        </tr>
+        <tr>
+            <td rowspan="1">Pikaajaline laoteenus<details><summary>Detailid</summary>Pikajaline laoteenus on kolm nädalat või rohkem</details></td>
+            <td>5</td>
+            <td>1m3 Ööpäev</td>
+        </tr>
+        <tr>
+            <th rowspan="2">Märkused</th>
+            <td colspan="2">
+                Hinnad on orienteeruvad ja võivad muutuda vastavalt teenuse mahule ja keerukusele. <br>
+                Täpsema hinnapakkumise saamiseks võtke meiega ühendust email@email.ee <br>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <a href="#kontakt">Kontakt</a>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" style="text-align: center;"><strong>Erivedude kohta päring esitada email@email.ee</strong></td>
         </tr>
         </tbody>
     </table>
@@ -191,36 +166,193 @@
 <section id="kontakt">
     <h2>Kontakt</h2>
     <form>
+
         <label for="name">Teie nimi:</label>
-        <input type="text" id="name" name="name" required><br>
+        <input type="text" id="name" name="name" required><br><br>
 
         <label for="email">E-mail:</label>
-        <input type="email" id="email" name="email" required><br>
+        <input type="email" id="email" name="email" required><br><br>
 
-        
+        <label for="phone">Telefon:</label>
+        <input type="tel" id="phone" name="phone"> <br>
+
+        <br>
         <select id="kaubakaal" name="kaubakaal" required>
             <option value="">Vali kaal</option>
             <option value="0-100kg">0-100kg</option>
             <option value="100-500kg">100-500kg</option>
             <option value="500-1000kg">500-1000kg</option>
             <option value="1000+kg">1000+kg</option>
-            <option value="infoparing">Lihtsalt infopäring</option>
         </select><br>
-
+        <h4>Päringu tüüp:</h4>
+        <input type="radio" id="kysimus" name="paringutyyp" value="kysimus" onclick="toggleDateTimeRequirement()" >
+        <label for="kysimus">Lihtsalt infopäring</label>
+        <input type="radio" id="hinnaparing" name="paringutyyp" value="hinnaparing"  onclick="toggleDateTimeRequirement()">
+        <label for="hinnaparing">Hinnapäring</label>
+        <input type="radio" id="kiireloomuline" name="paringutyyp" value="kiireloomuline" onclick="toggleDateTimeRequirement()">
+        <label for="kiireloomuline">Kiireloomuline</label><br>
+        <br>
+        <fieldset><legend>Kiireloomulise päringu puhul, palun märgi vastuse hiliseim aeg:</legend>
+        <label>Kuupäev: </label>
+        <input type="date" id="date" name="date" ><br><br>  <!-- Kuupäeva valik -->
+        <label>Kellaaeg: </label>
+        <input type="time" id="time" name="time" ><br><br>  <!-- Kellaaja valik -->
+            <p><i>	&#9830; Keskmiselt vastame kahe tunni jooksul</i></p>
+        </fieldset><br>
         <label for="message">Sõnum:</label><br>
-        <textarea id="message" name="message" rows="4" required></textarea><br><br>
+        <textarea id="message" name="message" rows="5" cols="32" required></textarea><br><br>
 
         <button type="submit">Saada</button>
     </form>
 </section>
+<section id="proovikeskkond">
+    <h2>Puuduvad elemendid</h2>
 
+    <canvas id="auto" width="300" height="150" style="border:1px solid grey">
+       <span style="color: red"> Your browser does not support the HTML5 canvas tag.</span>
+    </canvas> <br>
+    <code>
+        &lt;p&gt;See on näide koodilõigust&lt;/p&gt;
+    </code>
+    <h2>Tabeli veergude vormindamine</h2>
 
-<!-- Jalus -->
-<footer>
-    <p>&copy; 2024 Andreas Kirs. Kõik õigused kaitstud.</p>
-    <p>Telefon: +372 0000 0000 | E-mail:semail@email.ee</p>
+    <table>
+        <!-- Veergude rühmitamine ja vormindamine -->
+        <colgroup>
+            <col style="width: 20%;">
+            <col style="width: 40%;">
+            <col style="width: 40%;">
+        </colgroup>
 
-</footer>
+        <tr>
+            <th>Veerg 1</th>
+            <th>Veerg 2</th>
+            <th>Veerg 3</th>
+        </tr>
+        <tr>
+            <td>Andmed 1</td>
+            <td>Andmed 2</td>
+            <td>Andmed 3</td>
+        </tr>
+        <tr>
+            <td>Andmed 4</td>
+            <td>Andmed 5</td>
+            <td>Andmed 6</td>
+        </tr>
+    </table>
+    <br>
+    <div><hr></div>
+    <p>Uuendatud autopark:</p>
+    <ul>
+        <li><ins>Automaatne temperatuurikontroll</ins> tagab kaubale sobiliku keskkonna</li>
+        <li>...on keskkonnasõbralik<del> mingi tekst mis on kustutatud</del></li>
+        <li><ins>Uued laoruumid</ins> pakuvad kõrget turvalisust</li>
+    </ul>
+    <h2>Klaviatuurikäsud</h2>
+    <p>Kasutage klaviatuurikäske, et suhelda meie veebilehega:</p>
+    <ol>
+        <li>Pressige <kbd>Ctrl</kbd> + <kbd>C</kbd>, et kopeerida valitud tekst</li>
+        <li>Pressige <kbd>Ctrl</kbd> + <kbd>V</kbd>, et kanda kopeeritud tekst kursoriga</li>
+    </ol>
 
+    <p>Soovitame kasutada <kbd>Ctrl</kbd> + <kbd>R</kbd>, et meie leht uuesti laadida.</p>
+    <br>
+
+    <!-- SVG MAPPING -->
+    <h2>Logistikakeskus</h2>
+
+    <img src="images/warehouse-infographic-template.png" width="960" height="640" usemap="#logistikakeskus" alt="mappingpilt">
+
+    <map name="logistikakeskus">
+        <area shape="rect" coords="198,69,571,297" href="laoruum.html" alt="Laoruum" title="Laoruum">
+        <area shape="rect" coords="680,180,773,365" href="kontorid.html" alt="kontorid" title="kontorid">
+        <area shape="rect" coords="318,333,521,490" href="parkimine.html" alt="parkimine" title="parkimine">
+    </map>
+    <div id="sisend">
+        <h5>Koodijupp</h5>
+
+        <p>Kasutaja sisestas järgmise käsu:</p>
+        <pre><code>ping 192.168.1.1</code></pre>
+
+        <p>Süsteem vastas:</p>
+        <p><samp>Reply from 192.168.1.1: bytes=32 time=42ms TTL=64</samp></p>
+
+        <p>Vale sisendi puhul veateade:</p>
+        <p><samp>Error: Unknown host</samp></p>
+    </div>
+    <div>
+        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. <span style="color:green;">Dolorem facilis hic repellendus vitae. </span>
+            Alias culpa distinctio, dolorem dolores, eaque eius fugit libero necessitatibus, nihil officiis perferendis quo quos recusandae.
+            <sub>Asperiores at consequatur, </sub> <sup>eos iste omnis quam sapiente suscipit vitae</sup> voluptatum. A, consequuntur cupiditate delectus eius enim eos incidunt ipsa mollitia natus nesciunt quam, quas quasi quidem, repellendus saepe sapiente similique tenetur ut. Accusamus deserunt doloremque dolorum ea eius, esse est expedita inventore ipsa iure laudantium magni maiores nam neque numquam odio praesentium, quaerat quisquam quos ratione repellat rerum sapiente sit ut velit voluptatibus voluptatum. At perspiciatis provident repellat. Eaque, odio.</p>
+    </div>
+
+</section>
+</main>
+
+    <!-- Jalus -->
+    <footer>
+        <p>&copy; 2024 Andreas Kirs. Kõik õigused kaitstud.</p>
+        <p>Telefon: +372 0000 0000 | E-mail:email@email.ee</p>
+
+        <address><abbr title="Viljandi Kutseõppekeskus">VIKK</abbr>
+            Looduse tee 2, Vana-Võidu küla, Viljandi vald, Viljandimaa 70108
+        </address>
+    </footer>
+
+    <script>
+        const canvas = document.getElementById('auto');
+        const ctx = canvas.getContext('2d');
+
+        // Veoauto kere
+        ctx.fillStyle = "#FF0000"; // punane kere
+        ctx.fillRect(50, 60, 200, 50); // (x, y, laius, kõrgus)
+
+        // Juhi kabiin
+        ctx.fillStyle = "#FFA500"; // oranž kabiin
+        ctx.fillRect(50, 40, 70, 50); // (x, y, laius, kõrgus)
+
+        // Rattad
+        let wheelRadius = 15;
+        ctx.beginPath();
+        ctx.arc(80, 120, wheelRadius, 0, 2 * Math.PI); // esimene ratas (x, y, raadius)
+        ctx.arc(200, 120, wheelRadius, 0, 2 * Math.PI); // teine ratas (x, y, raadius)
+        ctx.fillStyle = "black";
+        ctx.fill();
+
+        // Aken
+        ctx.fillStyle = "lightblue";
+        ctx.fillRect(60, 45, 40, 25); // juhi aken (x, y, laius, kõrgus)
+
+        // Haagis
+        ctx.fillStyle = "#808080"; // hall haagis
+        ctx.fillRect(130, 30, 120, 40); // (x, y, laius, kõrgus)
+
+        // DIALOOG
+        //Dialoogi sulgemise funktsioon
+        const dialog = document.getElementById('myDialog');
+        const closeButton = document.getElementById('closeButton');
+
+        // Lisame nupule sündmuse kuulaja, mis sulgeb dialoogi
+        closeButton.addEventListener('click', function() {
+            dialog.close();
+        });
+
+        //PÄRINGU TÜÜP JA KONTROLL
+        // Funktsioon, mis kontrollib valitud raadionuppe ja muudab kuupäeva ja kellaaja nõutavust
+        function toggleDateTimeRequirement() {
+            const kiireloomuline = document.getElementById('kiireloomuline').checked;
+            const dateInput = document.getElementById('date');
+            const timeInput = document.getElementById('time');
+
+            // Kui on valitud "Kiireloomuline", tee kuupäeva ja kellaaja valik nõutavaks
+            if (kiireloomuline) {
+                dateInput.required = true;
+                timeInput.required = true;
+            } else {
+                dateInput.required = false;
+                timeInput.required = false;
+            }
+        }
+    </script>
 </body>
 </html>
