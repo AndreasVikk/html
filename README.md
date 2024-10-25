@@ -17,9 +17,10 @@ A simple static page with most common HTML Tags.
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/your-username/your-repo-name.git
+   git clone git@github.com:AndreasVikk/html.git
 
-2. Open the index.html file in your browser.
+2. Navigate to project folder called html
+3. Open the index.html file in your browser.
 
 ## Folder Structure
     html
@@ -34,4 +35,4 @@ A simple static page with most common HTML Tags.
 - JavaScript (for future)
 
 ## License
-This project is licensed under the MIT License.
+This project is licensed under the [AFL-3.0 License](https://opensource.org/licenses/AFL-3.0).
