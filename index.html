@@ -19,9 +19,6 @@
             border: 1px solid black;
             padding: 10px;
         }
-         #sisend{
-            border: 1px solid black;
-            padding: 10px;}
 
     </style>
 </head>
@@ -79,13 +76,13 @@
         <figcaption>Näidisvedu</figcaption>
     </figure>
 </section>
-    <section>
+   <div>
         <picture>
             <source media="(min-width:650px)" srcset="images/ladu1.svg">
-            <source media="(min-width:465px)" srcset="images/ladu2.jpg" width="465px" height="400">
-            <img src="img_orange_flowers.jpg" alt="laoruumid" style="width:auto;">
+            <source media="(min-width:465px)" srcset="images/ladu2.jpg" width="465" height="400">
+            <img src="images/ladu1.svg" alt="laoruumid" style="width:auto;">
         </picture>
-    </section>
+    </div>
 
 <!-- Teenused -->
 <section id="teenused">
@@ -164,13 +161,14 @@
     </table>
 
 </section>
-    <section>
-        <menu><h6>Meelespea</h6>
+    <div>
+    <h6>Meelespea</h6>
+    <menu>
             <li>Väikepakid on käsitsi teisaldatavad kuni 500x500x500 pakid</li>
             <li>Suured pakid on kõik teised ja ebastandardse mõõduga ja võivad vajada saatja-saaja poolset laadimisvõimalusi või tehnikat</li>
             <li>Aluste transport toimub ainult suurte veoautodega, rokla, tõstukite jmt abil</li>
         </menu>
-    </section>
+    </div>
 
 <!-- Kontaktivorm -->
 <section id="kontakt">
@@ -194,6 +192,7 @@
             <input type="checkbox" id="alused" name="alused" value="yes">
             Kaup on alustel, siis pakkide arvuna märkida aluste kogus
         </label><br><br>
+        <label for="kaubakaal"></label>
         <select id="kaubakaal" name="kaubakaal" required>
             <option value="">Vali kaal</option>
             <optgroup label="Väiksed pakid 500x500x500">
@@ -230,9 +229,9 @@
         <label for="kiireloomuline">Kiireloomuline</label><br>
         <br>
         <fieldset><legend>Kiireloomulise päringu puhul, palun märgi vastuse hiliseim aeg:</legend>
-        <label>Kuupäev: </label>
+        <label for="date">Kuupäev: </label>
         <input type="date" id="date" name="date" ><br><br>  <!-- Kuupäeva valik -->
-        <label>Kellaaeg: </label>
+        <label for="time">Kellaaeg: </label>
         <input type="time" id="time" name="time" ><br><br>  <!-- Kellaaja valik -->
             <p><i>	&#9830; Keskmiselt vastame kahe tunni jooksul</i></p>
         </fieldset><br>
@@ -260,7 +259,7 @@
     <div>
     <template>
         <h2>Euroalus</h2>
-        <img src="images/epal.jpg" width="500" height="304">
+        <img src="images/epal.jpg" width="500" height="304" alt="euroalus">
     </template>
     <button onclick="showContent()">Näita euroalust</button>
     </div>
