@@ -21,7 +21,7 @@
         }
          #sisend{
             border: 1px solid black;
-            padding: 10px;
+            padding: 10px;}
 
     </style>
 </head>
@@ -79,6 +79,13 @@
         <figcaption>Näidisvedu</figcaption>
     </figure>
 </section>
+    <section>
+        <picture>
+            <source media="(min-width:650px)" srcset="images/ladu1.svg">
+            <source media="(min-width:465px)" srcset="images/ladu2.jpg" width="465px" height="400">
+            <img src="img_orange_flowers.jpg" alt="laoruumid" style="width:auto;">
+        </picture>
+    </section>
 
 <!-- Teenused -->
 <section id="teenused">
@@ -150,9 +157,20 @@
         <tr>
             <td colspan="3" style="text-align: center;"><strong>Erivedude kohta päring esitada email@email.ee</strong></td>
         </tr>
+        <tr>
+            <td colspan="3" style="text-align: center;">  * Viimati uuendatud <time datetime="2024-06-24 13:00">Jaanipäeval</time></td>
+        </tr>
         </tbody>
     </table>
+
 </section>
+    <section>
+        <menu><h6>Meelespea</h6>
+            <li>Väikepakid on käsitsi teisaldatavad kuni 500x500x500 pakid</li>
+            <li>Suured pakid on kõik teised ja ebastandardse mõõduga ja võivad vajada saatja-saaja poolset laadimisvõimalusi või tehnikat</li>
+            <li>Aluste transport toimub ainult suurte veoautodega, rokla, tõstukite jmt abil</li>
+        </menu>
+    </section>
 
 <!-- Kontaktivorm -->
 <section id="kontakt">
@@ -169,12 +187,39 @@
         <input type="tel" id="phone" name="phone"> <br>
 
         <br>
+        <label for="pakkideArv">Pakkide arv:</label>
+        <input type="number" id="pakkideArv" name="kogus" min="1" max="10" step="1" value="1">
+        <br><br>
+        <label>
+            <input type="checkbox" id="alused" name="alused" value="yes">
+            Kaup on alustel, siis pakkide arvuna märkida aluste kogus
+        </label><br><br>
         <select id="kaubakaal" name="kaubakaal" required>
             <option value="">Vali kaal</option>
-            <option value="0-100kg">0-100kg</option>
-            <option value="100-500kg">100-500kg</option>
+            <optgroup label="Väiksed pakid 500x500x500">
+                <option value="0-5kg">0-5kg</option>
+                <option value="5-10kg">5-10kg</option>
+                <option value="10-20kg">10-20kg</option>
+                <option value="20-31,5kg">20-31,5kg</option>
+            </optgroup>
+            <optgroup label="Suured pakid">
+            <option value="31,5-50kg">31,5-50kg</option>
+            <option value="50-100kg">50-100kg</option>
+            <option value="100-200kg">100-200kg</option>
+            <option value="200-300kg">200-300kg</option>
+            <option value="300-400kg">300-400kg</option>
+            <option value="400-500kg">400-500kg</option>
             <option value="500-1000kg">500-1000kg</option>
             <option value="1000+kg">1000+kg</option>
+            </optgroup>
+            <optgroup label="Alused">
+                <option>EPAL</option>
+                <option>ISO</option>
+                <option>FIN</option>
+                <option>0,5 EPAL</option>
+                <option>0,25 EPAL</option>
+                <option>H1-plastik</option>
+            </optgroup>
         </select><br>
         <h4>Päringu tüüp:</h4>
         <input type="radio" id="kysimus" name="paringutyyp" value="kysimus" onclick="toggleDateTimeRequirement()" >
@@ -203,10 +248,24 @@
     <canvas id="auto" width="300" height="150" style="border:1px solid grey">
        <span style="color: red"> Your browser does not support the HTML5 canvas tag.</span>
     </canvas> <br>
-    <code>
-        &lt;p&gt;See on näide koodilõigust&lt;/p&gt;
-    </code>
-    <h2>Tabeli veergude vormindamine</h2>
+    <svg width="200" height="200">
+        <!-- Draw a square with width and height of 200 pixels -->
+        <rect x="10" y="10" width="180" height="180" fill="lightgray" stroke="black" stroke-width="2" />
+
+        <!-- Add text in the center -->
+        <text x="100" y="100" font-size="16" fill="black" text-anchor="middle" alignment-baseline="middle">
+            500x500x500mm
+        </text>
+    </svg>
+    <div>
+    <template>
+        <h2>Euroalus</h2>
+        <img src="images/epal.jpg" width="500" height="304">
+    </template>
+    <button onclick="showContent()">Näita euroalust</button>
+    </div>
+
+    <h2>Tabel2</h2>
 
     <table>
         <!-- Veergude rühmitamine ja vormindamine -->
@@ -231,6 +290,13 @@
             <td>Andmed 5</td>
             <td>Andmed 6</td>
         </tr>
+        <tfoot>
+        <tr>
+            <td>Keskmine</td>
+            <td>3,5</td>
+            <td>4,5</td>
+        </tr>
+        </tfoot>
     </table>
     <br>
     <div><hr></div>
@@ -275,9 +341,22 @@
     <div>
         <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. <span style="color:green;">Dolorem facilis hic repellendus vitae. </span>
             Alias culpa distinctio, dolorem dolores, eaque eius fugit libero necessitatibus, nihil officiis perferendis quo quos recusandae.
-            <sub>Asperiores at consequatur, </sub> <sup>eos iste omnis quam sapiente suscipit vitae</sup> voluptatum. A, consequuntur cupiditate delectus eius enim eos incidunt ipsa mollitia natus nesciunt quam, quas quasi quidem, repellendus saepe sapiente similique tenetur ut. Accusamus deserunt doloremque dolorum ea eius, esse est expedita inventore ipsa iure laudantium magni maiores nam neque numquam odio praesentium, quaerat quisquam quos ratione repellat rerum sapiente sit ut velit voluptatibus voluptatum. At perspiciatis provident repellat. Eaque, odio.</p>
+            <sub>Asperiores at consequatur, </sub> <sup>eos iste omnis quam sapiente suscipit vitae</sup> voluptatum. A, consequuntur cupiditate delectus eius enim eos incidunt ipsa mollitia natus nesciunt quam, quas quasi quidem, repellendus saepe sapiente similique tenetur ut.
+            Accusamus deserunt doloremque dolorum ea eius, esse est expedita inventore ipsa iure laudantium magni maiores nam neque numquam odio praesentium,
+            <small>quaerat quisquam quos ratione repellat</small> rerum sapiente sit ut velit voluptatibus voluptatum. At perspiciatis provident repellat. Eaque, odio.</p>
     </div>
+<div>
 
+</div>
+<h6>Mingi väiksem pealkiri</h6>
+    <label>Mingi nupp -->
+      <input type="button" value="Vajuta mind" onclick="alert('Hüpikaknad meeldivad kõigile :)!')">
+    </label>
+
+    <div>
+    <h2>Kasutatud elemendid:</h2>
+    <ol id="elementOverview"></ol>
+    </div>
 </section>
 </main>
 
@@ -289,6 +368,7 @@
         <address><abbr title="Viljandi Kutseõppekeskus">VIKK</abbr>
             Looduse tee 2, Vana-Võidu küla, Viljandi vald, Viljandimaa 70108
         </address>
+
     </footer>
 
     <script>
@@ -345,6 +425,54 @@
                 timeInput.required = false;
             }
         }
+
+        // Euroaluse kuvamise funktsioon
+        function showContent() {
+            let temp = document.getElementsByTagName("template")[0];
+            let clon = temp.content.cloneNode(true);
+            document.body.appendChild(clon);
+        }
+
+        // Function to count and display all HTML elements in alphabetical order
+        function listHtmlElements() {
+            // Select all elements in the document, including shadow DOM and input types
+            const allElements = document.querySelectorAll('*');
+            // Create an empty object to count each element type
+            const elementCount = {};
+
+            // Count each element type
+            allElements.forEach(element => {
+                const tagName = element.tagName.toLowerCase();
+
+                // For input elements, include specific input types
+                if (tagName === 'input') {
+                    const inputType = element.getAttribute('type') || 'text'; // Default to "text" if no type
+                    elementCount[`input[type="${inputType}"]`] = (elementCount[`input[type="${inputType}"]`] || 0) + 1;
+                } else {
+                    elementCount[tagName] = (elementCount[tagName] || 0) + 1;
+                }
+            });
+
+            // Sort the element types alphabetically
+            const sortedElements = Object.entries(elementCount).sort(([tagA], [tagB]) => tagA.localeCompare(tagB));
+
+            // Select the <ol> element where the overview will be displayed
+            const overviewList = document.getElementById('elementOverview');
+
+            // Clear previous content
+            overviewList.innerHTML = '';
+
+            // Populate the list with each element type and its count in alphabetical order
+            sortedElements.forEach(([tag, count]) => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${tag}: ${count}`;
+                overviewList.appendChild(listItem);
+            });
+        }
+
+        // Run the function to display the elements overview when the page loads
+        document.addEventListener('DOMContentLoaded', listHtmlElements);
+
     </script>
 </body>
 </html>
